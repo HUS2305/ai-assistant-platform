@@ -1,0 +1,16 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./packages/config/tsconfig/base.json" },
+    { "path": "./apps/web" },
+    { "path": "./apps/api" },
+    { "path": "./packages/core-assistant" },
+    { "path": "./packages/integrations" },
+    { "path": "./packages/db" },
+    { "path": "./packages/ui" },
+    { "path": "./packages/utils" },
+    { "path": "./suites/creator" },
+    { "path": "./suites/email" }
+  ]
+}
+

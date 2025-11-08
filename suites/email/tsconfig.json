@@ -1,0 +1,11 @@
+{
+  "extends": "@ai-assistant/config/tsconfig",
+  "compilerOptions": {
+    "rootDir": "src",
+    "composite": true,
+    "declaration": true,
+    "outDir": "dist"
+  },
+  "include": ["src"]
+}
+

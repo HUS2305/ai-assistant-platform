@@ -1,0 +1,15 @@
+{
+  "name": "@ai-assistant/config",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "exports": {
+    "./eslint": "./eslint/index.cjs",
+    "./tsconfig": "./tsconfig/base.json"
+  },
+  "files": [
+    "eslint",
+    "tsconfig"
+  ]
+}
+

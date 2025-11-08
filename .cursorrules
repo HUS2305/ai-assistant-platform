@@ -1,0 +1,115 @@
+## .cursorrules
+
+## Project Definition: Personal AI Assistant Platform
+
+## Overview
+
+This repository contains the development of a personal AI assistant platform that integrates deeply into WhatsApp and Telegram, with a connected web dashboard for management, customization, and analytics. The assistant understands text, voice, and image inputs and performs contextual actions across productivity and communication tools.
+
+The goal is to create a single conversational interface where users can manage their schedules, reminders, emails, and content through natural chat interactions, while the dashboard provides structure, visibility, and control.
+
+## Core Capabilities
+
+1. Multimodal Understanding
+
+   - Interpret and act upon text, voice (Whisper), and images (Vision).
+   - Support natural communication in any format.
+
+2. Personal Productivity and Scheduling
+
+   - Calendar integration (create, modify, summarize events)
+   - Notes and reminders (manual and proactive)
+   - Daily summaries and “friend-style” reminders
+   - Learns user habits (preferred times, tone, and meeting styles)
+
+3. Persistent Memory
+
+   - Store user preferences, tone, and recurring actions
+   - Provide contextual continuity between interactions
+
+4. Web Dashboard
+
+   - Visual control layer for reminders, notes, and integrations
+   - Suite-specific modules for analytics and workflow
+   - Synchronization with assistant conversations
+
+## Product Structure
+
+The platform consists of a core assistant layer and specialized suites.
+
+### Core Assistant
+
+Includes:
+
+- OpenAI GPT (reasoning and generation)
+- Whisper (speech-to-text)
+- Vision (image understanding)
+- WhatsApp Cloud API and Telegram Bot API
+- Google Calendar API
+- Persistent user memory with Postgres and Prisma
+- Auth, billing, and integration with dashboard
+
+### Creator Suite
+
+For creators and small brands managing social content.
+
+Features:
+
+- Content calendar and auto-post scheduling
+- Caption and hashtag generation
+- Performance analytics and image-based suggestions
+- Chat-based commands for post management
+
+### Email Management Suite
+
+For professionals handling high email volume.
+
+Features:
+
+- Gmail and Outlook integration
+- AI-generated draft replies
+- Thread summarization and organization
+- Follow-up reminders and inbox labeling
+- Calendar linkage for meetings
+
+## Long-Term Vision
+
+To evolve into a modular AI workspace with domain-specific assistants sharing the same infrastructure. Future suites could include Real Estate, Agency, or General Productivity Suites.
+
+## Strategic Positioning
+
+This platform combines:
+
+- A chat-first interface in WhatsApp and Telegram
+- Multimodal AI (text, voice, and image)
+- Persistent user memory and context awareness
+- Modular suite-based expansion
+- A dashboard for structure and transparency
+
+## Mission
+
+To create a personal and professional AI assistant that understands users naturally, acts across their tools, and centralizes their daily digital life into one seamless, chat-based experience.
+
+## Tech Stack Decisions
+
+- Frontend uses Next.js 14 (App Router) with Tailwind CSS, shared UI package, and Vitest.
+- Backend API uses Fastify with tRPC, Prisma for Postgres, and BullMQ on Redis for background jobs.
+- Authentication is powered by NextAuth, backed by Prisma + Postgres.
+- AI integrations rely on OpenAI (GPT, Whisper, Vision) behind typed wrappers to allow future provider swaps.
+- Messaging integrations use WhatsApp Cloud API and Telegram Bot API directly (no third-party aggregators).
+
+## Customer Billing and Onboarding Flow
+
+1. Prospects are sent to Stripe Checkout first; successful payment creates/updates the customer in our system via Stripe webhooks.
+2. After checkout we trigger an onboarding sequence (email link or redirect) that walks the user through profile setup and connects messaging channels.
+3. NextAuth handles account authentication; onboarding completion marks the workspace as active and unlocks the dashboard.
+
+## Rules for Cursor
+
+- Always show full file paths and complete code when creating or editing files.
+- Maintain consistent folder structure across /api, /web, /core, and /suites.
+- Use environment variables for all API keys.
+- Adhere to modular principles: isolate suite logic from core assistant logic.
+- Prioritize clear, maintainable TypeScript and Next.js structure.
+- Ensure integrations (OpenAI, Telegram, WhatsApp, Gmail, etc.) use typed wrappers.
+

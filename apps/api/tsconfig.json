@@ -1,0 +1,10 @@
+{
+  "extends": "@ai-assistant/config/tsconfig",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+    "composite": true
+  },
+  "include": ["src", "vitest.config.ts"]
+}
+
