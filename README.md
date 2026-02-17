@@ -1,3 +1,3 @@
-# Personal AI Assistant Platform
+Personal AI Assistant Platform is a personal assistant that lives in WhatsApp, Telegram, and the web. It understands text, voice, and images to help manage reminders, calendars, social content, and emails.
 
-This monorepo houses a multimodal AI that lives in WhatsApp, Telegram, and a web dashboard. The personal assistant understands text, voice, and images to coordinate reminders, calendars, social content, and email workflows.
+Made by Hussein Jarrah.
